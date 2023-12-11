@@ -420,10 +420,10 @@ function getOptionaud(){
 
 
 
-// function getOption9() {
-//     const selectElement = document.querySelector('#alphabetInput');
-//     const output = selectElement.value.toUpperCase();
-//     const imageContainer = document.querySelector('.outputImg');
+function getOption9() {
+    const selectElement = document.querySelector('#alphabetInput');
+    const output = selectElement.value.toUpperCase();
+    const imageContainer = document.querySelector('.outputImg');
 
 	// const playbackRates = {
     //     V: 0.2, // Set a custom playback rate for "V"
@@ -494,102 +494,150 @@ function getOptionaud(){
 	
 
 	
-// 	const letterNames = {
-// 		A: "Archery",
-// 		B: "Banjo",
-// 		C: "Candy",
-// 		D: "Dog",
-// 		E: "Eye",
-// 		F: "Firetruck",
-// 		G: "Giraffe",
-// 		H: "Hippo",
-// 		I: "Insect",
-// 		J: "Jet",
-// 		K: "Kite",
-// 		L: "Laboratory",
-// 		M: "Mustache",
-// 		N: "Net",
-// 		O: "Orchestra",
-// 		P: "Paddle",
-// 		Q: "Quarterback",
-// 		R: "Robot",
-// 		S: "Submarine",
-// 		T: "Tape",
-// 		U: "Unicorn",
-// 		V: "Vacuum",
-// 		W: "Wand",
-// 		X: "X-ray",
-// 		Y: "Yard",
-// 		Z: "Zebra",
-// 	};
+	const letterNames = {
+		A: "Archery",
+		B: "Banjo",
+		C: "Candy",
+		D: "Dog",
+		E: "Eye",
+		F: "Firetruck",
+		G: "Giraffe",
+		H: "Hippo",
+		I: "Insect",
+		J: "Jet",
+		K: "Kite",
+		L: "Laboratory",
+		M: "Mustache",
+		N: "Net",
+		O: "Orchestra",
+		P: "Paddle",
+		Q: "Quarterback",
+		R: "Robot",
+		S: "Submarine",
+		T: "Tape",
+		U: "Unicorn",
+		V: "Vacuum",
+		W: "Wand",
+		X: "X-ray",
+		Y: "Yard",
+		Z: "Zebra",
+	};
 	
 
 
 
-//     if (imageSources[output]) {
-//         // Clear the previous content
-//         while (imageContainer.firstChild) {
-//             imageContainer.removeChild(imageContainer.firstChild);
-//         }
+    if (imageSources[output]) {
+        // Clear the previous content
+        while (imageContainer.firstChild) {
+            imageContainer.removeChild(imageContainer.firstChild);
+        }
 
-//         let currentIndex = 0;
+        let currentIndex = 0;
 
-//         // Create an img element
-//         const image = document.createElement('img');
-//         image.src = imageSources[output][currentIndex];
-//         image.alt = `Image for ${output}`;
+        // Create an img element
+        const image = document.createElement('img');
+        image.src = imageSources[output][currentIndex];
+        image.alt = `Image for ${output}`;
 
-// 		image.style.width = '245px'; // Set the width to 200px
-//         image.style.height = '290px'; // Set the height to 200px
-// 		image.style.margin = '-55px';	 
-// 		image.style.marginLeft='340px'
-// 		// image.style.marginBottom='50px'
+		image.style.width = '245px'; // Set the width to 200px
+        image.style.height = '290px'; // Set the height to 200px
+		image.style.margin = '-55px';	 
+		image.style.marginLeft='340px'
+		// image.style.marginBottom='50px'
 		
-// 		// image.style.marginLeft="400px"
-// 		// image.style.marginBottom="-300px"
+		// image.style.marginLeft="400px"
+		// image.style.marginBottom="-300px"
 
 
-// 		 var button = document.getElementById("hintButton");
-//   		button.style.display = "none";
+		 var button = document.getElementById("hintButton");
+  		button.style.display = "none";
 
 
-//         // Function to change images every 1 second
-//         imageRotationInterval =setInterval(function () {
-//             currentIndex = (currentIndex + 1) % imageSources[output].length;
-//             image.src = imageSources[output][currentIndex];
-//         }, 900);
+        // Function to change images every 1 second
+        imageRotationInterval =setInterval(function () {
+            currentIndex = (currentIndex + 1) % imageSources[output].length;
+            image.src = imageSources[output][currentIndex];
+        }, 900);
 
-// 		setTimeout(function(){
-// 			clearInterval(imageRotationInterval);
-// 		},3600);
+		setTimeout(function(){
+			clearInterval(imageRotationInterval);
+		},3600);
 
-// 		nameContainer.textContent = letterNames[output];
+		nameContainer.textContent = letterNames[output];
 
-//     } else {
-//         // If no image found for the selected alphabet, display an error or placeholder image
-//         imageContainer.textContent = 'Image not found';
-//     }
-// }
+    } else {
+        // If no image found for the selected alphabet, display an error or placeholder image
+        imageContainer.textContent = 'Image not found';
+    }
+}
 
-// document.addEventListener('DOMContentLoaded', function () {
-// // document.getElementById('hintButton').addEventListener('click', getOption9);
-// });
+document.addEventListener('DOMContentLoaded', function () {
+// document.getElementById('hintButton').addEventListener('click', getOption9);
+});
 
 
 
-// // Function to display images after clicking the "Hint to remember" button
-// function getOption9() {
-//     const selectElement = document.querySelector('#alphabetInput');
-//     const output = selectElement.value.toUpperCase();
-//     const imageContainer = document.querySelector('.outputImg');
-//     const nameContainer = document.querySelector('.outputName');
+
+
+
+
+
+// Define Morse code sequences for each alphabet
+function getMorseCodeForAlphabet(alphabet) {
+	const morseCodes = {
+		A: '.-',     // Morse code for A
+		B: '-...',   // Morse code for B
+		C: '-.-.',   // Morse code for C
+		D: '-..',    // Morse code for D
+		E: '.',      // Morse code for E
+		F: '..-.',   // Morse code for F
+		G: '--.',    // Morse code for G
+		H: '....',   // Morse code for H
+		I: '..',      // Morse code for I
+		J: '.---',   // Morse code for J
+		K: '-.-',    // Morse code for K
+		L: '.-..',   // Morse code for L
+		M: '--',     // Morse code for M
+		N: '-.',     // Morse code for N
+		O: '---',    // Morse code for O
+		P: '.--.',   // Morse code for P
+		Q: '--.-',   // Morse code for Q
+		R: '.-.',    // Morse code for R
+		S: '...',    // Morse code for S
+		T: '-',      // Morse code for T
+		U: '..-',    // Morse code for U
+		V: '...-',   // Morse code for V
+		W: '.--',    // Morse code for W
+		X: '-..-',   // Morse code for X
+		Y: '-.--',   // Morse code for Y
+		Z: '--..'    // Morse code for Z
+	};
+	
+
+    return morseCodes[alphabet] || '';
+}
+
+
+
+
+
+
+
+
+
+// Function to display images after clicking the "Hint to remember" button
+function getOption9() {
+    const selectElement = document.querySelector('#alphabetInput');
+    const output = selectElement.value.toUpperCase();
+    const imageContainer = document.querySelector('.outputImg');
+    const nameContainer = document.querySelector('.outputName');
     
-// 	// const playbackRates = {
-//     //     V: 0.2 // Set a custom playback rate for "V"
-//     // };
+	// const playbackRates = {
+    //     V: 0.2 // Set a custom playback rate for "V"
+    // };
 
     
-// }
+}
 
 //71 and 655
 
@@ -655,7 +703,21 @@ function resetToStepOne() {
     }
 }
 
+// function hideHintButton() {
+//     const hintButton = document.getElementById('hintButton');
+//     // hintButton.style.display = 'none';
 
+	
+// }
+
+
+
+
+
+//   function showHintButton() {
+//     const hintButton = document.getElementById('hintButton');
+//     hintButton.style.display = 'block';
+// }
 
 function clearImages() {
     const imageContainer = document.querySelector('.outputImg');
